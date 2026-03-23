@@ -80,7 +80,7 @@ export default function Home() {
         borderBottom: '1px solid var(--border)',
       }}>
         <span style={{ fontFamily: 'Syne', fontWeight: 800, fontSize: '1.1rem', color: 'var(--accent)', letterSpacing: '-0.02em' }}>
-          andi.dev
+          Andi H
         </span>
         <div style={{ display: 'flex', gap: '2.5rem' }}>
           {[['#projects','Projects'],['#skills','Skills'],['#contact','Contact']].map(([href, label]) => (
