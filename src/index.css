@@ -8,18 +8,14 @@
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
-  --bg2: #f9f8fc;
-  --bg3: #f0eef7;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --muted: #6b6375;
-
-  /* alias biar komponen lama tetap jalan */
-  --yellow: #aa3bff;
-  --yellow-dim: #8a1fe0;
+  --bg2: #faf9f4;
+  --bg3: #f0ede0;
+  --border: #e5e3d8;
+  --muted: #9a9488;
+  --accent: #e8a800;
+  --accent-hover: #d49800;
+  --accent-bg: rgba(232, 168, 0, 0.1);
+  --accent-border: rgba(232, 168, 0, 0.4);
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: 'Syne', system-ui, sans-serif;
@@ -44,17 +40,15 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #16171d;
-    --bg2: #1f2028;
-    --bg3: #2a2b35;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --muted: #9ca3af;
-    --yellow: #c084fc;
-    --yellow-dim: #a855f7;
+    --bg: #0f0f11;
+    --bg2: #16171d;
+    --bg3: #1f2028;
+    --border: #2a2b35;
+    --muted: #6b7280;
+    --accent: #f5c518;
+    --accent-hover: #e8b800;
+    --accent-bg: rgba(245, 197, 24, 0.08);
+    --accent-border: rgba(245, 197, 24, 0.35);
   }
 }
 
@@ -64,37 +58,34 @@ body {
   color: var(--text);
 }
 
-html, body {
+html, body, #root {
   min-height: 100%;
 }
-
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  border-inline: 1px solid var(--border);
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 h1, h2, h3 {
   font-family: var(--heading);
   color: var(--text-h);
+  margin: 0;
 }
 
 p { margin: 0; }
 
-code {
-  font-family: var(--mono);
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-  border-radius: 4px;
-  color: var(--text-h);
-}
+a { transition: color 0.2s; }
 
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
 html { scroll-behavior: smooth; }
