@@ -3,17 +3,24 @@ import ProjectCard from "../components/ProjectCard";
 
 function Home() {
   return (
-    <div>
-      <h1>My Portfolio</h1>
+    <div style={{ padding: "40px" }}>
+      <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>
+        Hi, I'm <span style={{ color: "#FFD700" }}>Andi</span> 👋
+      </h1>
 
-      {projects.map((p, index) => (
-        <ProjectCard
-          key={index}
-          title={p.title}
-          desc={p.desc}
-          link={p.link}
-        />
-      ))}
+      <p style={{ opacity: 0.7, marginBottom: "40px" }}>
+        Computer Science Student | Tech Enthusiast
+      </p>
+
+      <h2 style={{ marginBottom: "20px", color: "#FFD700" }}>
+        Projects 🚀
+      </h2>
+
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {projects.map((p, index) => (
+          <ProjectCard key={index} {...p} />
+        ))}
+      </div>
     </div>
   );
 }
