@@ -92,13 +92,13 @@ export default function Home() {
       {/* ── HERO ── */}
       <section style={{
         minHeight: '100svh',
-        display: 'flex', flexDirection: 'column',
+        display: 'flex',
         justifyContent: 'center', alignItems: 'center',
-        textAlign: 'center',
-        padding: '7rem 2rem 4rem',
+        padding: '7rem 4rem 4rem',
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
+        boxSizing: 'border-box'
       }}>
         {/* dot grid */}
         <div style={{
@@ -115,73 +115,107 @@ export default function Home() {
           zIndex: 0, pointerEvents: 'none',
         }} />
 
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '720px', animation: 'fadeUp 0.7s ease both' }}>
-          <p style={{
-            color: 'var(--accent)', fontSize: '0.78rem', letterSpacing: '0.22em',
-            marginBottom: '1.2rem', textTransform: 'uppercase', fontFamily: 'Syne', fontWeight: 700,
-          }}>Hello, World 👋</p>
-
-          <h1 style={{
-            fontFamily: 'Syne', fontWeight: 800, lineHeight: 1,
-            fontSize: 'clamp(3.5rem, 10vw, 7rem)',
-            marginBottom: '1.2rem', color: 'var(--text-h)',
-            letterSpacing: '-0.04em',
-          }}>
-            I'm{' '}
-            <span style={{
-              color: 'var(--accent)',
-              textShadow: '0 0 40px var(--accent-border)',
-              display: 'inline-block', animation: 'float 4s ease-in-out infinite',
-            }}>Andi</span>
-          </h1>
-
-          <div style={{ height: '2.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.6rem' }}>
-            <span style={{ fontFamily: 'Syne', fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', color: 'var(--muted)', fontWeight: 600 }}>
-              {role}<span style={{ color: 'var(--accent)', animation: 'blink 1s step-end infinite' }}>|</span>
-            </span>
-          </div>
-
-          <p style={{
-            color: 'var(--text)', maxWidth: '500px', lineHeight: 1.75,
-            marginBottom: '2.8rem', fontSize: '1rem', margin: '0 auto 2.8rem',
-          }}>
-            Building stuff, fixing bugs, learning along the way.
-            CS student focused on game dev, web, robotics, and security systems.
-          </p>
-
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#projects" style={{
-              background: 'var(--accent)', color: '#0f0f11',
-              padding: '0.85rem 2.2rem', borderRadius: '999px',
-              textDecoration: 'none', fontWeight: 700,
-              fontFamily: 'Syne', fontSize: '0.95rem',
-              transition: 'transform 0.2s, background 0.2s',
-              boxShadow: '0 4px 20px var(--accent-border)',
-            }}
-              onMouseEnter={e => { e.target.style.background = 'var(--accent-hover)'; e.target.style.transform = 'scale(1.04)' }}
-              onMouseLeave={e => { e.target.style.background = 'var(--accent)'; e.target.style.transform = 'scale(1)' }}
-            >See Projects →</a>
-
-            <a href="https://github.com/SirinAX" target="_blank" rel="noreferrer" style={{
-              border: '1px solid var(--border)', color: 'var(--text-h)',
-              padding: '0.85rem 2.2rem', borderRadius: '999px',
-              textDecoration: 'none', fontFamily: 'Syne', fontWeight: 600, fontSize: '0.95rem',
-              transition: 'border-color 0.2s, color 0.2s',
-            }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-h)' }}
-            >GitHub →</a>
-          </div>
-        </div>
-
-        <div style={{
-          position: 'absolute', bottom: '2rem',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem',
-          color: 'var(--muted)', fontSize: '0.7rem', letterSpacing: '0.2em',
-          animation: 'fadeUp 1s 0.5s ease both',
+        {/* CONTAINER HERO (FLEX) */}
+        <div style={{ 
+          position: 'relative', 
+          zIndex: 1, 
+          maxWidth: '1100px', 
+          width: '100%',
+          display: 'flex', 
+          flexWrap: 'wrap-reverse', 
+          alignItems: 'center', 
+          justifyContent: 'space-between',
+          gap: '3rem'
         }}>
-          <span>SCROLL</span>
-          <div style={{ width: '1px', height: '44px', background: 'linear-gradient(to bottom, var(--accent), transparent)' }} />
+          
+          {/* KIRI: TEKS */}
+          <div style={{ flex: '1 1 500px', textAlign: 'left', animation: 'fadeUp 0.7s ease both' }}>
+            <p style={{
+              color: 'var(--accent)', fontSize: '0.78rem', letterSpacing: '0.22em',
+              marginBottom: '1.2rem', textTransform: 'uppercase', fontFamily: 'Syne', fontWeight: 700,
+            }}>Hello, World 👋</p>
+
+            <h1 style={{
+              fontFamily: 'Syne', fontWeight: 800, lineHeight: 1.1,
+              fontSize: 'clamp(3.5rem, 8vw, 6rem)',
+              marginBottom: '1.2rem', color: 'var(--text-h)',
+              letterSpacing: '-0.04em',
+            }}>
+              I'm{' '}
+              <span style={{
+                color: 'var(--accent)',
+                textShadow: '0 0 40px var(--accent-border)',
+                display: 'inline-block', animation: 'float 4s ease-in-out infinite',
+              }}>Andi !</span>
+            </h1>
+
+            <div style={{ height: '2.2rem', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '1.6rem' }}>
+              <span style={{ fontFamily: 'Syne', fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', color: 'var(--muted)', fontWeight: 600 }}>
+                {role}<span style={{ color: 'var(--accent)', animation: 'blink 1s step-end infinite' }}>|</span>
+              </span>
+            </div>
+
+            <p style={{
+              color: 'var(--text)', maxWidth: '500px', lineHeight: 1.75,
+              marginBottom: '2.8rem', fontSize: '1rem',
+            }}>
+              Building stuff, fixing bugs, learning along the way.
+              CS student focused on game dev, web, robotics, and security systems.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
+              <a href="#projects" style={{
+                background: 'var(--accent)', color: '#0f0f11',
+                padding: '0.85rem 2.2rem', borderRadius: '999px',
+                textDecoration: 'none', fontWeight: 700,
+                fontFamily: 'Syne', fontSize: '0.95rem',
+                transition: 'transform 0.2s, background 0.2s',
+                boxShadow: '0 4px 20px var(--accent-border)',
+              }}
+                onMouseEnter={e => { e.target.style.background = 'var(--accent-hover)'; e.target.style.transform = 'scale(1.04)' }}
+                onMouseLeave={e => { e.target.style.background = 'var(--accent)'; e.target.style.transform = 'scale(1)' }}
+              >See Projects →</a>
+
+              <a href="https://www.linkedin.com/in/andihh/" target="_blank" rel="noreferrer" style={{
+                border: '1px solid var(--border)', color: 'var(--text-h)',
+                padding: '0.85rem 2.2rem', borderRadius: '999px',
+                textDecoration: 'none', fontFamily: 'Syne', fontWeight: 600, fontSize: '0.95rem',
+                transition: 'border-color 0.2s, color 0.2s',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-h)' }}
+              >LinkedIn</a>
+
+              <a href="https://github.com/SirinAX" target="_blank" rel="noreferrer" style={{
+                border: '1px solid var(--border)', color: 'var(--text-h)',
+                padding: '0.85rem 2.2rem', borderRadius: '999px',
+                textDecoration: 'none', fontFamily: 'Syne', fontWeight: 600, fontSize: '0.95rem',
+                transition: 'border-color 0.2s, color 0.2s',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-h)' }}
+              >GitHub</a>
+            </div>
+          </div>
+
+          {/* KANAN: FOTO */}
+          <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{
+              width: 'clamp(250px, 25vw, 350px)',
+              aspectRatio: '1/1',
+              borderRadius: '24px', 
+              border: '4px solid var(--border)',
+              backgroundImage: 'url(/Andi.jpeg)', 
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              boxShadow: '0 10px 40px var(--accent-bg)', // Efek glow di belakang foto
+              transition: 'border-color 0.3s, transform 0.3s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-10px)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
+            />
+          </div>
+
         </div>
       </section>
 
@@ -203,7 +237,14 @@ export default function Home() {
           <h2 style={{ fontFamily: 'Syne', fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 800, color: 'var(--text-h)', letterSpacing: '-0.03em' }}>Tools & Tech 🛠️</h2>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '3.5rem' }}>
+        {/* Container Skills */}
+        <div style={{ 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          gap: '0.8rem', 
+          marginBottom: '4rem',
+          justifyContent: 'flex-start' 
+        }}>
           {skills.map((s, i) => (
             <SkillPill key={i} skill={s} />
           ))}
@@ -211,14 +252,20 @@ export default function Home() {
 
         <div style={{ textAlign: 'left' }}>
           <p style={{ color: 'var(--accent)', fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '1.2rem', fontFamily: 'Syne', fontWeight: 700 }}>What I'm Up To</p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
             {currently.map((item, i) => (
               <div key={i} style={{
                 display: 'flex', alignItems: 'center', gap: '0.75rem',
-                padding: '0.75rem 1rem',
+                padding: '1rem 1.2rem',
                 background: 'var(--bg2)', border: '1px solid var(--border)',
-                borderRadius: '10px', fontSize: '0.95rem', color: 'var(--text-h)',
-              }}>{item}</div>
+                borderRadius: '12px', fontSize: '0.95rem', color: 'var(--text-h)',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+              >
+                {item}
+              </div>
             ))}
           </div>
         </div>
@@ -251,6 +298,16 @@ export default function Home() {
             onMouseLeave={e => { e.target.style.transform = 'scale(1)'; e.target.style.background = 'var(--accent)' }}
           >Say Hello ✉️</a>
 
+          <a href="https://www.linkedin.com/in/andihh/" target="_blank" rel="noreferrer" style={{
+            border: '1px solid var(--border)', color: 'var(--text-h)',
+            padding: '0.9rem 2.4rem', borderRadius: '999px',
+            textDecoration: 'none', fontFamily: 'Syne', fontWeight: 600, fontSize: '0.95rem',
+            transition: 'border-color 0.2s, color 0.2s',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-h)' }}
+          >LinkedIn</a>
+
           <a href="https://github.com/SirinAX" target="_blank" rel="noreferrer" style={{
             border: '1px solid var(--border)', color: 'var(--text-h)',
             padding: '0.9rem 2.4rem', borderRadius: '999px',
@@ -259,7 +316,7 @@ export default function Home() {
           }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-h)' }}
-          >GitHub →</a>
+          >GitHub</a>
         </div>
       </section>
 
@@ -289,8 +346,8 @@ function SkillPill({ skill }) {
       style={{
         background: hov ? 'var(--bg3)' : 'var(--bg2)',
         border: `1px solid ${hov ? skill.color : 'var(--border)'}`,
-        padding: '0.45rem 1.1rem', borderRadius: '8px',
-        fontSize: '0.85rem',
+        padding: '0.5rem 1.2rem', borderRadius: '10px',
+        fontSize: '0.9rem',
         color: hov ? skill.color : 'var(--text-h)',
         cursor: 'default', transition: 'all 0.2s',
         fontFamily: 'Syne', fontWeight: 600, letterSpacing: '0.04em',
